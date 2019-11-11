@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <meta charset="utf-8">
+    
 
     <head>
+        <meta charset="utf-8">
         <title>Ginなお部屋</title>
         <style type="text/css">
             .contents_link{
@@ -18,6 +19,16 @@
                 border: 2px solid darkred;
                 font-size: 20px;
             }
+                
+            .versions{
+                color:#112233;
+                font-size: 16px;
+                font-weight: bolder;
+                background-color: pink;
+                border: 2px solid darkslateblue;
+                border-collapse: collapse;
+            }
+            
             li{list-style: none;}
         </style>
     </head>
@@ -25,6 +36,22 @@
     <body>
         <h1>Gin_Index</h1>
         <h3 style="color:darkslateblue">Apache2+proxy+Gin</h3>
+
+        
+        <table class="versions">
+                <caption class="versions">versions</caption>
+                <tbody>
+                    <tr>
+                        <td class="versions">Golang</td>
+                        <td class="versions">{{.used_golang}}</td>
+                    </tr>
+                    <tr>
+                        <td class="versions">Gin</td>
+                        <td class="versions">{{.used_gin}}</td>
+                    </tr>
+                </tbody>
+        </table>
+        <li><a class="contents_link" href="./22">Ginで示す「鯖のスペック」</a></li>
         <li><a class="contents_link" href="/">戻る</a></li>
     </body>
 
