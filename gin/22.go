@@ -7,7 +7,7 @@ import (
 )
 
 func init() {
-	restdict["22"] = func(c *gin.Context) {
+	restdict["22.go"] = func(c *gin.Context) {
 		v, _ := mem.VirtualMemory()
 		cpup, _ := cpu.Percent(0, true)
 		cpuf, _ := cpu.Info()

@@ -24,7 +24,7 @@ func main() {
 
 	gin.SetMode(gin.ReleaseMode)
 	r := gin.New()
-	//r.Static("/static/bs/", "./static/")
+	r.Static("/static/", "./static/")
 	r.LoadHTMLGlob("./templates/*.html")
 	r.GET("/", func(c *gin.Context) {
 		//c.String(200, "Hello,World!")
@@ -33,7 +33,7 @@ func main() {
 			"used_gin":    gin.Version,
 		})
 	})
-	r.GET("/:name:", rest)
+	r.GET("/go/:name", rest)
 
 	r.Run("Localhost:20080")
 

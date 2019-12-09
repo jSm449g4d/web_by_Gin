@@ -6,16 +6,13 @@
     <meta charset="utf-8">
     <title>Ginなお部屋</title>
     <!--Bootstrap CSS -->
-    <!--CDN
+    <!--CDN-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"
-        onload="window.bs4css= 1;">-->
-    <!--fallback
+        onload="window.bs4css= 1;">
+    <!--fallback-->
     <script>window.bs4css || document.write(
-            "<link rel=\"stylesheet\" href=\"bootstrap-4.4.1-dist/css/bootstrap.min.css\" crossorigin=\"anonymous\">");
-    </script>-->
-    <script>window.bs4css || document.write(
-            "<link rel=\"stylesheet\" href=\"bootstrap-4.4.1-dist/css/bootstrap.min.css\" crossorigin=\"anonymous\">");
+            "<link rel=\"stylesheet\" href=\"static/bootstrap-4.4.1-dist/css/bootstrap.min.css\" crossorigin=\"anonymous\">");
     </script>
     <!--/Bootstrap CSS -->
 </head>
@@ -32,12 +29,12 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="versions">Golang</td>
-                    <td class="versions">{{.used_golang}}</td>
+                    <td>Golang</td>
+                    <td>{{.used_golang}}</td>
                 </tr>
                 <tr>
-                    <td class="versions">Gin</td>
-                    <td class="versions">{{.used_gin}}</td>
+                    <td>Gin</td>
+                    <td>{{.used_gin}}</td>
                 </tr>
             </tbody>
         </table>
@@ -53,7 +50,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><a href="./app22">Ginで示す「鯖のスペック」</a></td>
+                    <td><a href="./go/22.go">Ginで示す「鯖のスペック」</a></td>
                     <td>Hello World 的なアプリ</td>
                 </tr>
                 <tr>
@@ -67,16 +64,16 @@
 
 
     <!--Bootstrap and jQuery JS -->
-    <!--CDN
+    <!--CDN-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
         integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
-        crossorigin="anonymous"></script>-->
+        crossorigin="anonymous"></script>
     <!--fallback-->
     <script>window.jQuery || document.write(
-            "<script src=\"bootstrap-4.4.1-dist/js/jquery-3.4.1.min.js\" crossorigin=\"anonymous\"><\/script>")</script>
+            "<script src=\"static/bootstrap-4.4.1-dist/js/jquery-3.4.1.min.js\" crossorigin=\"anonymous\"><\/script>")</script>
     <script>$.fn.modal || document.write(
-            "<script src=\"bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js\" crossorigin=\"anonymous\"><\/script>")</script>
+            "<script src=\"static/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js\" crossorigin=\"anonymous\"><\/script>")</script>
     <!--/Bootstrap and jQuery JS -->
 </body>
 
