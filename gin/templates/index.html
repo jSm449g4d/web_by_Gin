@@ -1,58 +1,83 @@
 <!DOCTYPE html>
 <html lang="ja">
-    
 
-    <head>
-        <meta charset="utf-8">
-        <title>Ginなお部屋</title>
-        <style type="text/css">
-            .contents_link{
-                border: 2px solid pink;
-                background-color:azure;
-                color:darkviolet;
-                transition: color 5s linear;
-                padding : 1px ;
-                font-size: 18px;
-                line-height: 2;
-            }
-            .contents_link:hover{
-                border: 2px solid darkred;
-                font-size: 20px;
-            }
-                
-            .versions{
-                color:#112233;
-                font-size: 16px;
-                font-weight: bolder;
-                background-color: pink;
-                border: 2px solid darkslateblue;
-                border-collapse: collapse;
-            }
-            
-            li{list-style: none;}
-        </style>
-    </head>
 
-    <body>
-        <h1>Gin_Index</h1>
-        <h3 style="color:darkslateblue">Apache2+proxy+Gin</h3>
+<head>
+    <meta charset="utf-8">
+    <title>Ginなお部屋</title>
+    <!--Bootstrap CSS -->
+    <!--CDN
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"
+        onload="window.bs4css= 1;">-->
+    <!--fallback
+    <script>window.bs4css || document.write(
+            "<link rel=\"stylesheet\" href=\"bootstrap-4.4.1-dist/css/bootstrap.min.css\" crossorigin=\"anonymous\">");
+    </script>-->
+    <script>window.bs4css || document.write(
+            "<link rel=\"stylesheet\" href=\"bootstrap-4.4.1-dist/css/bootstrap.min.css\" crossorigin=\"anonymous\">");
+    </script>
+    <!--/Bootstrap CSS -->
+</head>
 
-        
-        <table class="versions">
-                <caption class="versions">versions</caption>
-                <tbody>
-                    <tr>
-                        <td class="versions">Golang</td>
-                        <td class="versions">{{.used_golang}}</td>
-                    </tr>
-                    <tr>
-                        <td class="versions">Gin</td>
-                        <td class="versions">{{.used_gin}}</td>
-                    </tr>
-                </tbody>
+<body>
+    <div class="mx-3">
+        <h1 style="color:#190019;font-family:cursive;">Gin_Index</h1>
+        <h5 style="color:darkslateblue">Gin+Bootstrap4</h5>
+        <table class="table table-sm table-bordered table-dark" style="color:green;background-color: plum;">
+            <thead>
+                <tr>
+                    <th class="text-center" colspan="2">versions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="versions">Golang</td>
+                    <td class="versions">{{.used_golang}}</td>
+                </tr>
+                <tr>
+                    <td class="versions">Gin</td>
+                    <td class="versions">{{.used_gin}}</td>
+                </tr>
+            </tbody>
         </table>
-        <li><a class="contents_link" href="./22">Ginで示す「鯖のスペック」</a></li>
-        <li><a class="contents_link" href="/">戻る</a></li>
-    </body>
+
+
+        <table class="table table-sm table-bordered mt-2 table-dark"
+            style="color: darkslategrey;background-color: pink;">
+            <thead>
+                <tr>
+                    <th class="text-center">Link</th>
+                    <th class="text-center">Brief explanation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="./app22">Ginで示す「鯖のスペック」</a></td>
+                    <td>Hello World 的なアプリ</td>
+                </tr>
+                <tr>
+                    <td><a href="/">戻る</a></td>
+                    <td>Index_Pageへ戻ります</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <!--Bootstrap and jQuery JS -->
+    <!--CDN
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+        crossorigin="anonymous"></script>-->
+    <!--fallback-->
+    <script>window.jQuery || document.write(
+            "<script src=\"bootstrap-4.4.1-dist/js/jquery-3.4.1.min.js\" crossorigin=\"anonymous\"><\/script>")</script>
+    <script>$.fn.modal || document.write(
+            "<script src=\"bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js\" crossorigin=\"anonymous\"><\/script>")</script>
+    <!--/Bootstrap and jQuery JS -->
+</body>
 
 </html>

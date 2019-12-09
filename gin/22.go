@@ -9,9 +9,12 @@ import (
 func init() {
 	restdict["22"] = func(c *gin.Context) {
 		v, _ := mem.VirtualMemory()
-		cpus, _ := cpu.Percent(0, true)
+		cpup, _ := cpu.Percent(0, true)
+		cpuf, _ := cpu.Info()
 		c.HTML(200, "22.html", gin.H{
-			"CPU_P": cpus,
+			"CPU_M": cpuf[0].ModelName,
+			"CPU_F": cpuf[0].Mhz,
+			"CPU_P": cpup,
 			"MEM_T": v.Total,
 			"MEM_U": v.Used,
 		})
