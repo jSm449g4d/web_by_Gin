@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"runtime"
 
 	"github.com/gin-gonic/gin"
@@ -20,6 +21,8 @@ func rest(c *gin.Context) {
 }
 
 func main() {
+	ipport := flag.String("ipport", "Localhost:20080", "IP:port")
+	flag.Parse()
 	//r := gin.Default()
 
 	gin.SetMode(gin.ReleaseMode)
@@ -35,6 +38,6 @@ func main() {
 	})
 	r.GET("/go/:name", rest)
 
-	r.Run("Localhost:20080")
+	r.Run(*ipport)
 
 }
