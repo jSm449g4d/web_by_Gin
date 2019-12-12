@@ -1,5 +1,5 @@
 
-FROM ubuntu:19.10
+FROM golang
 
 WORKDIR /
 COPY . .
