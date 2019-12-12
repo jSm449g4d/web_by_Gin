@@ -2,14 +2,14 @@
 FROM python:3.7
 COPY . .
 
-FROM golang
-COPY . .
+#FROM golang
+#COPY . .
 
 WORKDIR /
 
-RUN go get github.com/gin-gonic/gin
-RUN go get github.com/shirou/gopsutil/cpu
-RUN go get github.com/shirou/gopsutil/mem
+#RUN go get github.com/gin-gonic/gin
+#RUN go get github.com/shirou/gopsutil/cpu
+#RUN go get github.com/shirou/gopsutil/mem
 
 #download for fallback 
 RUN wget -N https://github.com/twbs/bootstrap/releases/download/v4.4.1/bootstrap-4.4.1-dist.zip
