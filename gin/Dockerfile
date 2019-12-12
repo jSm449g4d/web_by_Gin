@@ -3,7 +3,7 @@ FROM ubuntu:19.10
 WORKDIR /
 COPY . .
 RUN apt update -q;apt upgrade -yq
-RUN apt install -yq wget unzip golang
+RUN apt install -yq wget unzip golang gcc
 
 #download for fallback 
 RUN wget -N https://github.com/twbs/bootstrap/releases/download/v4.4.1/bootstrap-4.4.1-dist.zip
