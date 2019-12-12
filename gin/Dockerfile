@@ -7,10 +7,6 @@ COPY . .
 RUN apt update -q;apt upgrade -yq
 RUN apt install -yq wget unzip golang gcc git
 
-RUN apt-get update && apt-get install -y locales && rm -rf /var/lib/apt/lists/* \
-    && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
-ENV LANG en_US.utf8
-
 #download for fallback 
 RUN wget -N https://github.com/twbs/bootstrap/releases/download/v4.4.1/bootstrap-4.4.1-dist.zip
 RUN unzip bootstrap-4.4.1-dist.zip
