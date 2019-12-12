@@ -2,7 +2,8 @@
 FROM ubuntu:19.10
 WORKDIR /
 COPY . .
-Run apt install -q wget unzip
+RUN apt update -q;apt upgrade -q
+RUN apt install -q wget unzip
 
 #download for fallback 
 RUN wget -N https://github.com/twbs/bootstrap/releases/download/v4.4.1/bootstrap-4.4.1-dist.zip
