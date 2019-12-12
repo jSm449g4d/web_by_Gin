@@ -19,7 +19,7 @@ jobs:
       working-directory: gin
 
     - name: push
-      run: gcloud beta docker -- push gcr.io/crack-atlas-251509/gin
+      run: docker push gcr.io/crack-atlas-251509/gin
     
     - name: deploy
       run: gcloud beta run deoloy gin --image gcr.io/crack-atlas-251509/gin --region us-central1
