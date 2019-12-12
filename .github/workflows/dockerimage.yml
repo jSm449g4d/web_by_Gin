@@ -17,3 +17,7 @@ jobs:
     - name: Build
       run: docker build -t gcr.io/crack-atlas-251509/gin:latest .
       working-directory: gin
+
+    - name: push
+      run: gcloud docker -- push gcr.io/crack-atlas-251509/gin
+      
