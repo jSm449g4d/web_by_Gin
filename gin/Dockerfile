@@ -1,6 +1,7 @@
 
-FROM bash
+FROM ubuntu
 COPY . .
+RUN apt install -q unzip
 
 FROM golang
 WORKDIR /
