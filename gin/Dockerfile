@@ -1,10 +1,7 @@
 
-FROM python:3.7
-COPY . .
-
-#FROM golang
+FROM golang
 WORKDIR /
-#COPY . .
+COPY . .
 
 #RUN go get github.com/gin-gonic/gin
 #RUN go get github.com/shirou/gopsutil/cpu
