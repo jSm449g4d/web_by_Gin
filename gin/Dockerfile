@@ -1,5 +1,5 @@
 
-FROM ubuntu
+FROM bash
 COPY . .
 
 FROM golang
