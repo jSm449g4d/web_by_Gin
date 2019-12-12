@@ -1,5 +1,6 @@
 
 FROM golang
+FROM ubuntu
 
 WORKDIR /
 COPY . .
