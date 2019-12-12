@@ -1,9 +1,10 @@
 
-FROM unzip
+WORKDIR /
+
+FROM python
 COPY . .
 
 FROM golang
-WORKDIR /
 COPY . .
 
 RUN go get github.com/gin-gonic/gin
