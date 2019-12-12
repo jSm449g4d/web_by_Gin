@@ -1,11 +1,11 @@
 
-WORKDIR /
-
 FROM python
 COPY . .
 
 FROM golang
 COPY . .
+
+WORKDIR /
 
 RUN go get github.com/gin-gonic/gin
 RUN go get github.com/shirou/gopsutil/cpu
