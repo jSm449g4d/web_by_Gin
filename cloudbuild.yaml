@@ -1,0 +1,17 @@
+steps:
+    - name: "ubuntu"
+      args: ['ls']
+      #build
+    - name: "gcr.io/cloud-builders/docker"
+      args: ["build", "-t", "gcr.io/crack-atlas-251509/gin", "."]
+      dir: 'gin'
+      #push image to Container Registry
+    - name: "gcr.io/cloud-builders/docker"
+      args: ['push',"gcr.io/crack-atlas-251509/gin"]
+      #deploy
+    - name: 'gcr.io/cloud-builders/gcloud'
+      args: ['beta','run', 'deploy', 'gin', '--image', 'gcr.io/crack-atlas-251509/gin:latest',
+       '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
+      #delete image from Container Registry
+    - name: "gcr.io/cloud-builders/gcloud"
+      args: ["container", "images", "delete", "gcr.io/crack-atlas-251509/gin", "--force-delete-tags"]
