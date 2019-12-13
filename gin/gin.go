@@ -4,6 +4,7 @@ import (
 	"flag"
 	"runtime"
 
+	"github.com/artdarek/go-unzip"
 	"github.com/gin-gonic/gin"
 )
 
@@ -23,10 +24,15 @@ func rest(c *gin.Context) {
 func main() {
 	ipport := flag.String("ipport", "Localhost:20080", "IP:port")
 	flag.Parse()
-	//r := gin.Default()
 
+	//unzip CDN contents for fallback
+	uz := unzip.New("./static/bootstrap-4.4.1-dist.zip", "./static/")
+	uz.Extract()
+
+	//r := gin.Default()
 	gin.SetMode(gin.ReleaseMode)
 	r := gin.New()
+
 	r.Static("/static/", "./static/")
 	r.LoadHTMLGlob("./templates/*.html")
 	r.GET("/", func(c *gin.Context) {
