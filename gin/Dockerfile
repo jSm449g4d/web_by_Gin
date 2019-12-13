@@ -1,7 +1,8 @@
 
 FROM golang
 
-WORKDIR /
+RUN mkdir -p /gin
+WORKDIR /gin
 COPY . .
 
 RUN apt update -q;apt upgrade -yq
@@ -12,6 +13,6 @@ RUN go get github.com/shirou/gopsutil/cpu
 RUN go get github.com/shirou/gopsutil/mem
 RUN go get github.com/artdarek/go-unzip
 
-RUN go build -o gin.elf *.go
+RUN go build -o ./gin.elf ./*.go
 
 CMD ./gin.elf --ipport "0.0.0.0:8080"
