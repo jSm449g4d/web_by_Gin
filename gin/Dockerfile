@@ -12,4 +12,6 @@ RUN go get github.com/shirou/gopsutil/cpu
 RUN go get github.com/shirou/gopsutil/mem
 RUN go get github.com/artdarek/go-unzip
 
-CMD go run *.go --ipport "0.0.0.0:8080"
+RUN go build -o gin.elf *.go
+
+CMD ./gin.elf --ipport "0.0.0.0:8080"
