@@ -18,6 +18,11 @@ steps:
       #delete image from Container Registry
     - name: "gcr.io/cloud-builders/docker"
       args: ["container", "prune"]
+      
+      
+    - name: "gcr.io/cloud-builders/docker"
+      args: ["image", "prune"]
+      
       #delete past revisions
 #    - name: "$_PROJECT/gcloud"
 #      args: ['beta',"run", "revisions", "delete", 'flask-^',
