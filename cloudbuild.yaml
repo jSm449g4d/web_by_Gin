@@ -13,12 +13,14 @@ steps:
     - name: 'gcr.io/cloud-builders/gcloud'
       args: ['beta','run', 'deploy', '$_APPNAME', '--image', '$_PROJECT/$_APPNAME:latest',
        '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
-      #delete image from Container Registry
-    - name: "gcr.io/cloud-builders/gcloud"
-      args: ["container", "images", "delete", "$_PROJECT/$_APPNAME","--filter='-tags:*'", ]
-      #"--force-delete-tags"
-      
-      #delete past revisions
+       
+      #delete except for latest revision
 #    - name: "$_PROJECT/gcloud"
 #      args: ['beta',"run", "revisions", "delete", 'flask-^',
 #       '--region', 'us-central1', '--platform', 'managed',"--quiet"]
+       
+      #delete image from Container Registry
+    - name: "gcr.io/cloud-builders/gcloud"
+      args: ["container", "images", "delete", "$_PROJECT/$_APPNAME:<none>", ]
+      #"--force-delete-tags"
+      
