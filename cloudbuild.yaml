@@ -13,6 +13,8 @@ steps:
     - name: 'gcr.io/cloud-builders/gcloud'
       args: ['beta','run', 'deploy', '$_APPNAME', '--image', '$_PROJECT/$_APPNAME:latest',
        '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
+       
+       
       #delete image from Container Registry
     - name: "gcr.io/cloud-builders/docker"
       args: ["container", "prune"]
