@@ -16,11 +16,11 @@ steps:
        
       #delete except for latest revision
 #    - name: "$_PROJECT/gcloud"
-#      args: ['beta',"run", "revisions", "delete", 'flask-^',
+#      args: ['beta',"run", "revisions", "delete", 'flask',
 #       '--region', 'us-central1', '--platform', 'managed',"--quiet"]
        
       #delete image from Container Registry
     - name: "gcr.io/cloud-builders/gcloud"
-      args: ["container", "images", "delete", "$_PROJECT/$_APPNAME","--force-delete-tags","latest"]
+      args: ["container", "images", "delete", "$_PROJECT/$_APPNAME","--force-delete-tags"]
       #"--force-delete-tags"
       
