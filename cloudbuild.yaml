@@ -21,6 +21,6 @@ steps:
        
       #delete image from Container Registry
     - name: "gcr.io/cloud-builders/gcloud"
-      args: ["container", "images", "delete", "$_PROJECT/$_APPNAME:<none>", ]
+      args: ["container", "images", "delete", "$_PROJECT/$_APPNAME:<none>","--force-delete-tags" ]
       #"--force-delete-tags"
       
