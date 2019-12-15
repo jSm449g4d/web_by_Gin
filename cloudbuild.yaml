@@ -15,9 +15,9 @@ steps:
        '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
        
        
-      #delete image from Container Registry      
-    - name: 'ubuntu'
-      args: ['docker','image','prune']
+      #delete image from Container Registry     
+    - name: "gcr.io/cloud-builders/docker"
+      args: ["rmi","$(docker","images","-f","'dangling=true'","-q)","--force"]
       
       #delete past revisions
 #    - name: "$_PROJECT/gcloud"
