@@ -16,8 +16,8 @@ steps:
        
        
       #delete image from Container Registry      
-    - name: "gcr.io/cloud-builders/docker"
-      args: ["rmi", '$_PROJECT/$_APPNAME:<none>']
+    - name: 'ubuntu'
+      args: ['bash','docker','image','prune']
       
       #delete past revisions
 #    - name: "$_PROJECT/gcloud"
