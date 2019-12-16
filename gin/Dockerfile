@@ -6,7 +6,7 @@ WORKDIR /gin
 COPY . .
 
 RUN apt update -q;apt upgrade -yq
-RUN apt install -yq wget unzip golang gcc git
+RUN apt install -yq wget unzip golang gcc git curl
 
 RUN go get github.com/gin-gonic/gin
 RUN go get github.com/shirou/gopsutil/cpu
