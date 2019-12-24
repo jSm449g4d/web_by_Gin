@@ -1,7 +1,12 @@
 #plz set appname to env "Cloud Build→trigger→env→'_APPNAME'"
 #plz set GCP_project_dicetry to env "Cloud Build→trigger→env→'_PROJECT'"
+#plz set used_API_keys to env "Cloud Build→trigger→env→'_APIKEYS'"
 
 steps:
+      #insert keys
+    - name: "gcr.io/cloud-builders/gsutil"
+      args: ["cp", "$_APIKEYS", "FirebaseAdminKey.json"]
+      dir: '$_APPNAME'
       #build      
     - name: "gcr.io/cloud-builders/docker"
       args: ["build", "-t", "$_PROJECT/$_APPNAME", "."]
@@ -12,7 +17,8 @@ steps:
       #deploy
     - name: 'gcr.io/cloud-builders/gcloud'
       args: ['beta','run', 'deploy', '$_APPNAME', '--image', '$_PROJECT/$_APPNAME:latest',
-       '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
+       '--region', 'us-central1', '--platform', 'managed','--timeout','300',
+       '--allow-unauthenticated']
       #delete image from Container Registry
 #    - name: "gcr.io/cloud-builders/gcloud"
 #      args: ["container", "images", "delete", "$_PROJECT/$_APPNAME", "--force-delete-tags"]
