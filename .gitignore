@@ -1,6 +1,10 @@
-#Keys
+# Keys
 FirebaseAdmin_Key.json
 
 # Javascript/Typescript
 node_modules/
 package-lock.json
+
+# golang
+*.elf
+*.exe
