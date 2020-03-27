@@ -5,14 +5,14 @@
 
 steps:
       #insert keys
-    - name: gcr.io/cloud-builders/gsutil
+    - name: "gcr.io/cloud-builders/gsutil"
       args: 
         - cp
         - $_APIKEYS
         - FirebaseAdminKey.json
       dir: $_APPNAME
       #build      
-    - name: gcr.io/cloud-builders/docker
+    - name: "gcr.io/cloud-builders/docker"
       args: 
         - build
         - -t
@@ -20,12 +20,12 @@ steps:
         - .
       dir: $_APPNAME
       #push image to Container Registry
-    - name: gcr.io/cloud-builders/docker
+    - name: "gcr.io/cloud-builders/docker"
       args: 
         - push
         - $_PROJECT/$_APPNAME
       #deploy
-    - name: gcr.io/cloud-builders/gcloud
+    - name: "gcr.io/cloud-builders/gcloud"
       args: 
         - beta
         - run
@@ -40,4 +40,3 @@ steps:
         - --timeout
         - '300'
         - --allow-unauthenticated
-        
