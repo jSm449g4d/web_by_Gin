@@ -2,79 +2,61 @@
 <html lang="ja">
 
 
-<head>
-    <meta charset="utf-8">
-    <title>Ginなお部屋</title>
-    <!--Bootstrap CSS -->
-    <!--CDN-->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"
-        onload="window.bs4css= 1;">
-    <!--fallback-->
-    <script>window.bs4css || document.write(
-            "<link rel=\"stylesheet\" href=\"static/bootstrap-4.4.1-dist/css/bootstrap.min.css\" crossorigin=\"anonymous\">");
-    </script>
-    <!--/Bootstrap CSS -->
-</head>
+    <head>
+        <meta charset="utf-8">
+        <title>Ginなお部屋</title>
+    </head>
 
-<body>
-    <div class="mx-3">
-        <h1 style="color:#190019;font-family:cursive;">Gin_Index</h1>
-        <h5 style="color:darkslateblue">Gin+Bootstrap4</h5>
-        <table class="table table-sm table-bordered table-dark" style="color:green;background-color: plum;">
-            <thead>
-                <tr>
-                    <th class="text-center" colspan="2">versions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Golang</td>
-                    <td>{{.used_golang}}</td>
-                </tr>
-                <tr>
-                    <td>Gin</td>
-                    <td>{{.used_gin}}</td>
-                </tr>
-            </tbody>
-        </table>
+    <body>
+        <div class="mx-3">
+            <h1 style="color:#190019;font-family:cursive;">Gin_Index</h1>
+            <h5 style="color:darkslateblue">Gin+Bootstrap4</h5>
+            <table class="table table-sm table-bordered table-dark" style="color:green;background-color: plum;">
+                <thead>
+                    <tr>
+                        <th class="text-center" colspan="2">versions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Golang</td>
+                        <td>{{.used_golang}}</td>
+                    </tr>
+                    <tr>
+                        <td>Gin</td>
+                        <td>{{.used_gin}}</td>
+                    </tr>
+                </tbody>
+            </table>
 
 
-        <table class="table table-sm table-bordered mt-2 table-dark"
-            style="color: darkslategrey;background-color: pink;">
-            <thead>
-                <tr>
-                    <th class="text-center">Link</th>
-                    <th class="text-center">Brief explanation</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="./go/22.go">Ginで示す「鯖のスペック」</a></td>
-                    <td>Hello World 的なアプリ</td>
-                </tr>
-                <tr>
-                    <td><a href="/">戻る</a></td>
-                    <td>Index_Pageへ戻ります</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+            <table class="table table-sm table-bordered mt-2 table-dark" style="color: darkslategrey;background-color: pink;">
+                <thead>
+                    <tr>
+                        <th class="text-center">Link</th>
+                        <th class="text-center">Brief explanation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="./go/22.go">Ginで示す「鯖のスペック」</a></td>
+                        <td>Hello World 的なアプリ</td>
+                    </tr>
+                    <tr>
+                        <td><a href="/">戻る</a></td>
+                        <td>Index_Pageへ戻ります</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
 
 
-    <!--Bootstrap and jQuery JS -->
-    <!--CDN-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
-        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
-        crossorigin="anonymous"></script>
-    <!--fallback-->
-    <script>window.jQuery || document.write(
-            "<script src=\"static/bootstrap-4.4.1-dist/js/jquery-3.4.1.min.js\" crossorigin=\"anonymous\"><\/script>")</script>
-    <script>$.fn.modal || document.write(
-            "<script src=\"static/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js\" crossorigin=\"anonymous\"><\/script>")</script>
-    <!--/Bootstrap and jQuery JS -->
-</body>
+        <!--Bootstrap and jQuery JS-->
+        <link href="static/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="static/node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="static/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <!--Bootstrap and jQuery JS -->
+    </body>
 
 </html>

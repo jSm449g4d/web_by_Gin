@@ -1,18 +1,28 @@
 
 FROM golang
+#FROM ubuntu:19.10
 
-RUN mkdir -p /gin
-WORKDIR /gin
+#server initialize
+ENV APP /web_app
+WORKDIR $APP
 COPY . .
-
 RUN apt update -q;apt upgrade -yq
+
+#npm
+WORKDIR $APP/static
+RUN apt install -yq npm
+RUN npm install -g npm
+RUN npm install --save jquery bootstrap
+
+#golang
+WORKDIR $APP/static
 RUN apt install -yq wget unzip golang gcc git curl
-
-RUN go get github.com/gin-gonic/gin
-RUN go get github.com/shirou/gopsutil/cpu
-RUN go get github.com/shirou/gopsutil/mem
-RUN go get github.com/artdarek/go-unzip
-
+RUN go get github.com/gin-gonic/gin && \
+    go get github.com/shirou/gopsutil/cpu && \
+    go get github.com/shirou/gopsutil/mem && \
+    go get github.com/artdarek/go-unzip
 RUN go build -o ./gin.elf ./*.go
 
+#server hosting
+WORKDIR $APP/static
 CMD ./gin.elf --ipport "0.0.0.0:8080"
