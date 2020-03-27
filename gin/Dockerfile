@@ -25,4 +25,4 @@ RUN go build -o ./gin.elf ./*.go
 
 #server hosting
 WORKDIR $APP
-CMD ./gin.elf --ipport "0.0.0.0:8080"
+CMD ./gin.elf --IP_port "0.0.0.0:8080"

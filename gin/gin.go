@@ -13,7 +13,7 @@ func init() {
 }
 
 func main() {
-	ipport := flag.String("ipport", "Localhost:20080", "IP:port")
+	ipport := flag.String("IP_port", "Localhost:20080", "IP:port")
 	flag.Parse()
 
 	//r := gin.Default()
@@ -37,10 +37,10 @@ func main() {
 		}
 	})
 
-	r.GET("/html/:name", func(c *gin.Context) {
-		filename := c.Param("name")
-		print(filename)
-		c.HTML(200,"22.html" , gin.H{})//filename+".html"
+	r.GET("/html/:htmlname", func(c *gin.Context) {
+		htmlname := c.Param("htmlname")
+		print(htmlname)
+		c.HTML(200,htmlname+".html" , gin.H{})
 	})
 
 	r.Run(*ipport)
