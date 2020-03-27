@@ -12,14 +12,6 @@ var restdict = make(map[string]func(c *gin.Context))
 func init() {
 }
 
-func rests(c *gin.Context) {
-	filename := c.Param("name")
-	theshow, ok := restdict[filename]
-	if ok {
-		theshow(c)
-	}
-}
-
 func main() {
 	ipport := flag.String("ipport", "Localhost:20080", "IP:port")
 	flag.Parse()
@@ -47,7 +39,8 @@ func main() {
 
 	r.GET("/html/:name", func(c *gin.Context) {
 		filename := c.Param("name")
-		c.HTML(200, filename+".html", gin.H{})
+		print(filename)
+		c.HTML(200,"22.html" , gin.H{})//filename+".html"
 	})
 
 	r.Run(*ipport)
