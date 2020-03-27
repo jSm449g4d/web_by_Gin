@@ -8,9 +8,9 @@ steps:
     - name: "gcr.io/cloud-builders/gsutil"
       args: 
         - cp
-        - $_APPKEYS"
+        - $_APPKEYS
         - ./
-      dir: '$_APPNAME'
+      dir: $_APPNAME
       #build
     - name: "gcr.io/cloud-builders/docker"
       args: 
