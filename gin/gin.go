@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"runtime"
-	"github.com/artdarek/go-unzip"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -33,8 +33,8 @@ func main() {
 	r.GET("/", func(c *gin.Context) {
 		//c.String(200, "Hello,World!")
 		c.HTML(200, "index.html", gin.H{
-			"used_golang": runtime.Version(),
-			"used_gin":    gin.Version,
+			"STATUS_GOLANG_VERSION": runtime.Version(),
+			"STATUS_GIN_VERSION":    gin.Version,
 		})
 	})
 	r.GET("/go/:name", rest)
