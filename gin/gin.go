@@ -12,7 +12,7 @@ var restdict = make(map[string]func(c *gin.Context))
 func init() {
 }
 
-func rest(c *gin.Context) {
+func rests(c *gin.Context) {
 	filename := c.Param("name")
 	theshow, ok := restdict[filename]
 	if ok {
@@ -37,7 +37,18 @@ func main() {
 			"STATUS_GIN_VERSION":    gin.Version,
 		})
 	})
-	r.GET("/go/:name", rest)
+	r.GET("/go/:name", func(c *gin.Context) {
+		filename := c.Param("name")
+		theshow, ok := restdict[filename]
+		if ok {
+			theshow(c)
+		}
+	})
+
+	r.GET("/html/:name", func(c *gin.Context) {
+		filename := c.Param("name")
+		c.HTML(200, filename+".html", gin.H{})
+	})
 
 	r.Run(*ipport)
 
