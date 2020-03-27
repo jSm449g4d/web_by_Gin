@@ -6,11 +6,8 @@
 steps:
       #insert keys
     - name: "gcr.io/cloud-builders/gsutil"
-      args: 
-        - cp
-        - $_APIKEYS
-        - FirebaseAdminKey.json
-      dir: $_APPNAME
+      args: ["cp","$_APPKEYS", "./"]
+      dir: '$_APPNAME'
       #build      
     - name: "gcr.io/cloud-builders/docker"
       args: 
