@@ -1,11 +1,10 @@
-#plz set test_bash_file to env "Cloud Build→trigger→env→'_TESTSH'"
 
 steps:
       #insert keys
     - name: "gcr.io/cloud-builders/gsutil"
       args: 
         - cp
-        - $_APPKEYS
+        - $_GCS_KEYS
         - ./
       dir: web_app
       #build
@@ -13,14 +12,14 @@ steps:
       args: 
         - build
         - -t
-        - $_CONTAINER
+        - $_CONTAINER/$_APPNAME
         - .
       dir: web_app
       #push image to Container Registry
     - name: "gcr.io/cloud-builders/docker"
       args: 
         - push
-        - $_CONTAINER
+        - $_CONTAINER/$_APPNAME
       #deploy
     - name: "gcr.io/cloud-builders/gcloud"
       args: 
@@ -29,7 +28,7 @@ steps:
         - deploy
         - $_APPNAME
         - --image
-        - $_CONTAINER:latest
+        - $_CONTAINER/$_APPNAME:latest
         - --region
         - us-central1
         - --platform
