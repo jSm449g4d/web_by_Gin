@@ -5,7 +5,7 @@ steps:
     - name: "gcr.io/cloud-builders/gsutil"
       args: 
         - cp
-        - web_app
+        - $_APPKEYS
         - ./
       dir: web_app
       #build
