@@ -1,4 +1,3 @@
-
 steps:
       #insert keys
     - name: "gcr.io/cloud-builders/gsutil"
