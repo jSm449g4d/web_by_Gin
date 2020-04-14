@@ -13,8 +13,7 @@ func init() {
 }
 
 func main() {
-//	ipport := flag.String("IP_port", "Localhost:20080", "IP:port")
-	ipport := flag.String("IP_port", "0.0.0.0:8080", "IP:port")
+	ipport := flag.String("IP_port", "Localhost:20080", "IP:port")
 	flag.Parse()
 
 	//r := gin.Default()
