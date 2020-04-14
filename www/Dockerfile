@@ -20,8 +20,8 @@ RUN go get github.com/gin-gonic/gin && \
     go get github.com/shirou/gopsutil/cpu && \
     go get github.com/shirou/gopsutil/mem && \
     go get github.com/artdarek/go-unzip
-RUN go build -o ./gin.elf ./*.go
 
 #server hosting
 WORKDIR $APP
+RUN go build -o ./gin.elf ./*.go
 CMD ./gin.elf --IP_port "0.0.0.0:8080"
