@@ -24,4 +24,4 @@ RUN go get github.com/gin-gonic/gin && \
 #server hosting
 WORKDIR $APP
 RUN go build -o ./gin.elf ./*.go
-CMD ./gin.elf --IP_port "0.0.0.0:8080"
+CMD bash -c "./gin.elf --IP_port=0.0.0.0:8080"
