@@ -1,27 +1,27 @@
 steps:
-      #insert keys
-    - name: "gcr.io/cloud-builders/gsutil"
-      args: 
+      # insert keys
+    - name: gcr.io/cloud-builders/gsutil
+      args:
         - cp
         - $_GCS_KEYS
         - ./
-      dir: web_app
-      #build
-    - name: "gcr.io/cloud-builders/docker"
+      dir: www
+      # build
+    - name: gcr.io/cloud-builders/docker
       args: 
         - build
         - -t
         - $_CONTAINER/$_APPNAME
         - .
-      dir: web_app
-      #push image to Container Registry
-    - name: "gcr.io/cloud-builders/docker"
-      args: 
+      dir: www
+      # push image to Container Registry
+    - name: gcr.io/cloud-builders/docker
+      args:
         - push
         - $_CONTAINER/$_APPNAME
-      #deploy
-    - name: "gcr.io/cloud-builders/gcloud"
-      args: 
+      # deploy
+    - name: gcr.io/cloud-builders/gcloud
+      args:
         - beta
         - run
         - deploy
@@ -29,9 +29,11 @@ steps:
         - --image
         - $_CONTAINER/$_APPNAME:latest
         - --region
-        - us-central1
+        - asia-northeast1
         - --platform
         - managed
         - --timeout
-        - '300'
+        - "300"
+        - --memory
+        - 2Gi
         - --allow-unauthenticated

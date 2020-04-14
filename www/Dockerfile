@@ -1,21 +1,20 @@
 
 FROM golang
-#FROM ubuntu:19.10
 
-#server initialize
-ENV APP /web_app
+# Init
+ENV APP /var/www
 WORKDIR $APP
 COPY . .
 RUN apt update -q;apt upgrade -yq
 
-#npm
+# Javascript
 WORKDIR $APP/static
-RUN apt install -yq npm
+RUN apt install npm -yq
 RUN npm install -g npm
-RUN npm install --save jquery bootstrap
+RUN npm install --save jquery react react-dom react-bootstrap bootstrap firebase
 
-#golang
-WORKDIR $APP
+# Golang
+WORKDIR $APP/Gin
 RUN apt install -yq wget golang gcc git curl
 RUN go get github.com/gin-gonic/gin && \
     go get github.com/shirou/gopsutil/cpu && \

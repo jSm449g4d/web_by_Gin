@@ -24,7 +24,7 @@ func main() {
 	r.LoadHTMLGlob("./templates/*.html")
 	r.GET("/", func(c *gin.Context) {
 		//c.String(200, "Hello,World!")
-		c.HTML(200, "index.html", gin.H{
+		c.HTML(200, "Gin_index.html", gin.H{
 			"STATUS_GOLANG_VERSION": runtime.Version(),
 			"STATUS_GIN_VERSION":    gin.Version,
 		})

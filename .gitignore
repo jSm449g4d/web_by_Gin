@@ -1,10 +1,23 @@
 # Keys
 FirebaseAdmin_Key.json
+www.zip
+www.zip.tmp
 
 # Javascript/Typescript
 node_modules/
 package-lock.json
+src/
+
+# Python
+__pycache__/
 
 # golang
 *.elf
 *.exe
+
+# server
+tmp/
+db/
+
+# VScode
+.vscode/
