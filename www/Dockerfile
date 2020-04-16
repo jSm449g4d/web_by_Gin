@@ -8,10 +8,10 @@ COPY . .
 RUN apt update -q;apt upgrade -yq
 
 # Javascript
-WORKDIR $APP/static
+WORKDIR $APP/html/static
 RUN apt install npm -yq
 RUN npm install -g npm
-RUN npm install --save jquery react react-dom react-bootstrap bootstrap firebase
+RUN npm install --save jquery@3.4.1 popper.js@1.16.1 react react-dom react-bootstrap bootstrap firebase
 
 # Golang
 WORKDIR $APP/Gin

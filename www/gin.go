@@ -20,8 +20,8 @@ func main() {
 	gin.SetMode(gin.ReleaseMode)
 	r := gin.New()
 
-	r.Static("/static/", "./static/")
-	r.LoadHTMLGlob("./templates/*.html")
+	r.Static("/static/", "./html/static/")
+	r.LoadHTMLGlob("./Gin/templates/*.html")
 	r.GET("/", func(c *gin.Context) {
 		//c.String(200, "Hello,World!")
 		c.HTML(200, "Gin_index.html", gin.H{
